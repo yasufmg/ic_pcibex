@@ -1,0 +1,91 @@
+ITEM,SENTENCE,COMPATIBILITY,SUBJECT,LIST,TYPE
+101,As promessas foram quebradas pela loja,1,eventivo,A,item
+201,Os enfeites foram quebrados pelo homem,1,não-eventivo,B,item
+102,Aquela luta foi ganha pelo soldado,2,eventivo,B,item
+202,Este presente foi ganho pela criança,2,não-eventivo,A,item
+103,A compra foi valida pelo meu esposo,3,eventivo,A,item
+203,O lugar foi valido pela prefeitura,3,não-eventivo,B,item
+104,O clima da conversa foi cortado por Ben,1,eventivo,B,item
+204,O bolo foi cortado pelas duas avós,1,não-eventivo,A,item
+105,A ajuda foi conseguida pela babá,2,eventivo,A,item
+205,O nome foi conseguido pelo carteiro,2,não-eventivo,B,item
+106,A aposta foi lucrada pelos jogadores,3,eventivo,B,item
+206,Cinco milhões foram lucrados pelo banco,3,não-eventivo,A,item
+107,O embarque foi aberto pelos três fiscais,1,eventivo,A,item
+207,Esta porta foi aberta pelo coala,1,não-eventivo,B,item
+108,A exposição foi recebida pela sala 2,2,eventivo,B,item
+208,Os animais foram recebidos pelo homem,2,não-eventivo,A,item
+109,O castigo foi custado pelos pecadores,3,eventivo,A,item
+209,O local foi custado dinheiro pela empresa,3,não-eventivo,B,item
+110,A cerimônia foi fechada pela apresentação,1,eventivo,B,item
+210,A torneira foi fechada pelo mecânico,1,não-eventivo,A,item
+111,A caçada foi perdida pelo caçador,2,eventivo,A,item
+211,Os anéis foram perdidos pelo caminho,2,não-eventivo,B,item
+112,A renúncia foi tida pelos senadores,3,eventivo,B,item
+212,Essa casa foi tida por Maria Lúcia,3,não-eventivo,A,item
+113,O ataque foi removido do fórum,1,eventivo,A,item
+213,As postagens foram removidas da página,1,não-eventivo,B,item
+114,O corte foi acessado pelos jornalistas,2,eventivo,B,item
+214,O prova foi acessada pelos ministros,2,não-eventivo,A,item
+115,A dança foi significada pela bailarina,3,eventivo,A,item
+215,A palavra foi significada pela criança,3,não-eventivo,B,item
+116,A denúncia foi fabricada pelos criminosos,1,eventivo,B,item
+216,A madeira foi fabricada pelo homem,1,não-eventivo,A,item
+117,O trabalho foi acumulado pela equipe,2,eventivo,A,item
+217,A despensa foi acumulada por baratas,2,não-eventivo,B,item
+118,O agito foi sabido pelos policiais,3,eventivo,B,item
+218,Os erros foram sabidos pela esposa,3,não-eventivo,A,item
+501,Marta estava almoçando as crianças,.,.,A,filler
+502,Gil estava batizando o sobrinho,.,.,A,filler
+503,Eles estavam casando um amigo,.,.,A,filler
+504,O pai estava estudando os filhos,.,.,A,filler
+505,Marina estava formando a amiga,.,.,A,filler
+506,Ricardo estava jantando as crianças,.,.,A,filler
+507,Beto estava consagrando a prima,.,.,A,filler
+508,Clarice estava separando o casal,.,.,A,filler
+509,Liz estava promovendo uma amiga,.,.,A,filler
+510,A família estava aprovando o filho,.,.,A,filler
+801,Ricardo lamentou um fato,.,.,A,filler
+802,Paulo gritou que ela gostava de morangos,.,.,A,filler
+803,Maria sabe um livro,.,.,A,filler
+804,Maria compreendeu uma briga,.,.,A,filler
+805,Maria percebeu uma mensagem,.,.,A,filler
+806,João lembrou algum ocorrido,.,.,A,filler
+807,João esqueceu algum evento,.,.,A,filler
+808,Maria advinhou um acontecimento,.,.,A,filler
+809,Ricardo parece que a Ana beijou,.,.,A,filler
+810,Ricardo acabou que a fruta estragou,.,.,A,filler
+811,Suzana quer Ana cozinhar a comida,.,.,A,filler
+812,Lucas decidiu o ajudante colher as frutas,.,.,A,filler
+813,O motorista resolveu Carlos trocar a bateria,.,.,A,filler
+814,Janice tentou Fernanda acender a luz,.,.,A,filler
+815,O padre conseguiu Juca celebrar o casamento,.,.,A,filler
+816,Max pode Maria pintar uma flor,.,.,A,filler
+817,Ricardo deseja a Ana limpar a casa,.,.,A,filler
+501,Marta estava almoçando as crianças,.,.,B,filler
+502,Gil estava batizando o sobrinho,.,.,B,filler
+503,Eles estavam casando um amigo,.,.,B,filler
+504,O pai estava estudando os filhos,.,.,B,filler
+505,Marina estava formando a amiga,.,.,B,filler
+506,Ricardo estava jantando as crianças,.,.,B,filler
+507,Beto estava consagrando a prima,.,.,B,filler
+508,Clarice estava separando o casal,.,.,B,filler
+509,Liz estava promovendo uma amiga,.,.,B,filler
+510,A família estava aprovando o filho,.,.,B,filler
+801,Ricardo lamentou um fato,.,.,B,filler
+802,Paulo gritou que ela gostava de morangos,.,.,B,filler
+803,Maria sabe um livro,.,.,B,filler
+804,Maria compreendeu uma briga,.,.,B,filler
+805,Maria percebeu uma mensagem,.,.,B,filler
+806,João lembrou algum ocorrido,.,.,B,filler
+807,João esqueceu algum evento,.,.,B,filler
+808,Maria advinhou um acontecimento,.,.,B,filler
+809,Ricardo parece que a Ana beijou,.,.,B,filler
+810,Ricardo acabou que a fruta estragou,.,.,B,filler
+811,Suzana quer Ana cozinhar a comida,.,.,B,filler
+812,Lucas decidiu o ajudante colher as frutas,.,.,B,filler
+813,O motorista resolveu Carlos trocar a bateria,.,.,B,filler
+814,Janice tentou Fernanda acender a luz,.,.,B,filler
+815,O padre conseguiu Juca celebrar o casamento,.,.,B,filler
+816,Max pode Maria pintar uma flor,.,.,B,filler
+817,Ricardo deseja a Ana limpar a casa,.,.,B,filler
