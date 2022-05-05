@@ -1,2 +1,2 @@
 # ic
-Experimento de julgamento de aceitabilidade da passiva
+Experimento de julgamento de aceitabilidade
