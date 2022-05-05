@@ -13,12 +13,12 @@ Header(
 )
 
  // Add the particimant info to all trials' results lines
-.log( "id"     , getVar("ID") )
-.log( "genero" , getVar("GENERO") )
-.log( "nativo" , getVar("NATIVO") )
-.log( "idade"    , getVar("IDADE") )
-.log( "escolaridade" , getVar("ESCOLARIDADE") )
-.log( "certificado"   , getVar("CERTIFICADO") )
+.log( "ID"     , getVar("ID") )
+.log( "GENERO" , getVar("GENERO") )
+.log( "NATIVO" , getVar("NATIVO") )
+.log( "IDADE"    , getVar("IDADE") )
+.log( "ESCOLARIDADE" , getVar("ESCOLARIDADE") )
+.log( "CERTIFICADO"   , getVar("CERTIFICADO") )
 
 // Sequence of events: consent to ethics statement required to start the experiment, participant information, instructions, exercise, transition screen, main experiment, result logging, and end screen.
 Sequence("consentimento", "setcounter", "participants", "instructions", randomize("exercise"), "start_experiment", rshuffle("experiment-filler", "experiment-item"), SendResults(), "end")
@@ -58,7 +58,7 @@ newTrial("participants",
         .cssContainer({"margin-top":"1em", "margin-bottom":"1em"})
         .print()
     ,
-    newText("participant_info_header", "<div class='fancy'><h2>Questionário sociodemográfico</h2><p>Por favor, complete esse questionário com algumas informações sobre você. Prossiga com a tecla ENTER.</p></div>")
+    newText("participant_info_header", "<div class='fancy'><h2>Questionário sociodemográfico</h2><p>Por favor, complete esse questionário com algumas informações sobre você.</p></div>")
     ,
     // Participant ID
     newText("participantID", "<b>Informe seu nome ou, se preferir, suas iniciais.</b>")
@@ -86,7 +86,7 @@ newTrial("participants",
         .print()
     ,
     // Idade
-    newText("<b>Qual a sua idade?</b><br>(responda usando números, por exemplo: 23 e não 23 anos)")
+    newText("<b>Qual a sua idade?</b><br>(responda usando números)")
     ,
     newTextInput("input_idade")
         .length(2)
@@ -158,8 +158,8 @@ newTrial("instructions",
             ,
             
     newScale("slider", 700)
-        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL </div>") )
-        .after( newText("right", "<div class='fancy'> TOTALMENTE ACEITÁVEL </div>") )
+        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL (0) </div>") )
+        .after( newText("right", "<div class='fancy'> (7) TOTALMENTE ACEITÁVEL </div>") )
         .keys()
         .labelsPosition("top")
         .cssContainer({"margin":"1em"})
@@ -191,9 +191,8 @@ Template("exercise.csv", row =>
             ,
         
         newScale("slider", 700)
-        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL </div>") )
-        .after( newText("right", "<div class='fancy'> TOTALMENTE ACEITÁVEL </div>") )
-        .keys()
+        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL (0) </div>") )
+        .after( newText("right", "<div class='fancy'> (7) TOTALMENTE ACEITÁVEL </div>") )
         .labelsPosition("top")
         .cssContainer({"margin":"1em"})
         .slider()
@@ -216,6 +215,7 @@ Template("exercise.csv", row =>
 newTrial( "start_experiment" ,
 
 // Experimental trial
+
 Template("experiment.csv", row =>
     newTrial( "experiment-"+row.TYPE,
         newText("sentence", row.SENTENCE)
@@ -223,19 +223,21 @@ Template("experiment.csv", row =>
             .center()
             .print()
             ,
+            
     // 7-point scale
-        newScale("slider", 700)
-        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL </div>") )
-        .after( newText("right", "<div class='fancy'> TOTALMENTE ACEITÁVEL </div>") )
-        .keys()
+  
+    newScale("slider", 700)
+        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL (0) </div>") )
+        .after( newText("right", "<div class='fancy'> (7) TOTALMENTE ACEITÁVEL </div>") )
         .labelsPosition("top")
         .cssContainer({"margin":"1em"})
         .slider()
-        .log()
         .center()
+        .log()
         .print()
         ,
-            newButton("go_to_exercise", "Próximo")
+        
+    newButton("go_to_exercise", "Próximo")
         .cssContainer({"margin":"1em"})
         .center()
         .print()
@@ -246,11 +248,11 @@ Template("experiment.csv", row =>
             .start()
             .wait()
     )
+    
     // Record trial data
     .log("LIST"     , row.LIST)
     .log("ITEM"     , row.ITEM)
     .log("COMPATIBILITY", row.COMPATIBILITY)
-    .log("VERB", row.VERB)
     .log("SUBJECT"   , row.SUBJECT)
 ))
 
