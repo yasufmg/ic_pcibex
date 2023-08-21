@@ -11,7 +11,7 @@ Este experimento permite que o pesquisador realize a coleta de dados de aceitabi
 # Como baixar e adicionar ao PCIBEX Farm?
 
 1ª opção: Neste repositório, vá em "<> Code" > "Local" > "HTTPS" > Copie a URL e adicione no PCIBEX Farm em um projeto vazio pela opção "Git Sync". Faça as alterações de acordo com seu objeto de estudo.
-2ª opção: Neste repositório, vá em "<> Code" > "Local" > "HTTPS" > "Download ZIP". Extraia o arquivo em seu computador e arraste todas as pasta para um arquivo vazio no PCIBEX Farm. Faça as alterações de acordo com seu objeto de estudo.
+2ª opção: Neste repositório, vá em "<> Code" > "Local" > "HTTPS" > "Download ZIP". Extraia o arquivo em seu computador e arraste todas as pasta para um projeto vazio no PCIBEX Farm. Faça as alterações de acordo com seu objeto de estudo.
 
 # Agradecimentos
 
