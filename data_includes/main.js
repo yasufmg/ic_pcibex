@@ -143,37 +143,12 @@ newTrial("participants",
 
 // Instructions
 newTrial("instructions",
-    newText("instructions_greeting", "<h2>INSTRUÇÕES</h2><p>Nesta pesquisa, você será solicitado a avaliar x sentenças em critérios de aceitabilidade ou inaceitabilidade no português brasileiro, de acordo com uma escala de 1 a 7, em que 1 significa TOTALMENTE INACEITÁVEL na língua e 7 significa TOTALMENTE ACEITÁVEL na língua. Exemplo:</p>")
+    newText("instructions_greeting", "<h2>INSTRUÇÕES</h2><p>Neste experimento, você deverá avaliar algumas frases do português de acordo com uma escala de 0 a 100, em que 0 significa TOTALMENTE ARTIFICIAL e 100 significa TOTALMENTE NATURAL.</p><p>Ao iniciar, você verá uma frase. Leia-a com atenção e atribua uma nota a ela movimentando a escala de 0 a 100.</p><p>Por fim, clique em PRÓXIMO para enviar sua nota e continuar avaliando as próximas frases.</p><p>Observe que não nos interessa saber se a frase é correta ou não, mas apenas se ela lhe parece natural ou artificial segundo o uso cotidiano que todos os falantes fazem da língua.</p><p>Após entender essas instruções, clique em INICIAR para começar.</p>")
         .left()
         .cssContainer({"margin":"1em"})
         .print()
         ,
-        
-    // 7-point scale
-    
-    newText("<p>SENTENÇA DE TESTE</p>")
-            .cssContainer({"margin-top":"2em", "margin-bottom":"2em"})
-            .center()
-            .print()
-            ,
-            
-    newScale("slider", 700)
-        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL (0) </div>") )
-        .after( newText("right", "<div class='fancy'> (7) TOTALMENTE ACEITÁVEL </div>") )
-        .keys()
-        .labelsPosition("top")
-        .cssContainer({"margin":"1em"})
-        .slider()
-        .center()
-        .print()
-        ,
-        
-    newText("<p>Na sentença acima, você deve movimentar a escala e clicar no botão para enviar sua resposta.</p>")
-            .cssContainer({"margin-top":"2em", "margin-bottom":"2em"})
-            .left()
-            .print()
-            ,
-            
+  
     newButton("go_to_exercise", "Iniciar experimento")
         .cssContainer({"margin":"1em"})
         .center()
@@ -183,23 +158,33 @@ newTrial("instructions",
 
 // Exercise
 Template("exercise.csv", row =>
-    newTrial( "exercise" ,
+newTrial( "exercise" ,
         newText("sentence", row.SENTENCE)
-            .cssContainer({"margin-top":"2em", "margin-bottom":"2em"})
+            .cssContainer({"margin-top":"2em", "margin-bottom":"2em", "font-size":"1.5em"})
             .center()
             .print()
             ,
-        
-        newScale("slider", 700)
-        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL (0) </div>") )
-        .after( newText("right", "<div class='fancy'> (7) TOTALMENTE ACEITÁVEL </div>") )
+
+    newScale("slider", 100)
+        .before( newText("left", "<div class='fancy'> TOTALMENTE ARTIFICIAL (0) </div>") )
+        .after( newText("right", "<div class='fancy'> (100) TOTALMENTE NATURAL </div>") )
         .labelsPosition("top")
         .cssContainer({"margin":"1em"})
         .slider()
         .center()
-        .size(100,50)
+        .size(500).css("max-width", "20em")
         .print()
         ,
+    
+    newText(`<span style='width: 2em; text-align: left;'>0</span>
+        <span style='width: 2em; text-align: center;'>25</span>
+           <span style='width: 2em; text-align: center;'>50</span>
+           <span style='width: 2em; text-align: center;'>75</span>
+           <span style='width: 2em; text-align: right;'>100</span>`)
+    .css({display: 'flex', 'justify-content': 'space-between', width: '20em'})
+    .center()
+    .print()
+    ,
             newButton("go_to_exercise", "Próximo")
         .cssContainer({"margin":"1em"})
         .center()
@@ -220,24 +205,34 @@ newTrial( "start_experiment" ,
 Template("experiment.csv", row =>
     newTrial( "experiment-"+row.TYPE,
         newText("sentence", row.SENTENCE)
-            .cssContainer({"margin-top":"2em", "margin-bottom":"2em"})
+            .cssContainer({"margin-top":"2em", "margin-bottom":"2em", "font-size":"1.5em"})
             .center()
             .print()
             ,
             
     // 7-point scale
-  
-    newScale("slider", 700)
-        .before( newText("left", "<div class='fancy'> TOTALMENTE INACEITÁVEL (0) </div>") )
-        .after( newText("right", "<div class='fancy'> (7) TOTALMENTE ACEITÁVEL </div>") )
+
+    newScale("slider", 100)
+        .before( newText("left", "<div class='fancy'> TOTALMENTE ARTIFICIAL (0) </div>") )
+        .after( newText("right", "<div class='fancy'> (100) TOTALMENTE NATURAL </div>") )
         .labelsPosition("top")
         .cssContainer({"margin":"1em"})
         .slider()
         .center()
-        .log()
+        .size(500).css("max-width", "20em")
         .print()
+        .log("last")
         ,
-        
+    
+    newText(`<span style='width: 2em; text-align: left;'>0</span>
+        <span style='width: 2em; text-align: center;'>25</span>
+           <span style='width: 2em; text-align: center;'>50</span>
+           <span style='width: 2em; text-align: center;'>75</span>
+           <span style='width: 2em; text-align: right;'>100</span>`)
+    .css({display: 'flex', 'justify-content': 'space-between', width: '20em'})
+    .center()
+    .print()
+  ,
     newButton("go_to_exercise", "Próximo")
         .cssContainer({"margin":"1em"})
         .center()
@@ -251,10 +246,11 @@ Template("experiment.csv", row =>
     )
     
     // Record trial data
-    .log("LIST"     , row.LIST)
     .log("ITEM"     , row.ITEM)
+    .log("SENTENCE" , row.SENTENCE)
     .log("COMPATIBILITY", row.COMPATIBILITY)
-    .log("SUBJECT"   , row.SUBJECT)
+    .log("SUBJECT"  , row.SUBJECT)
+    .log("LIST"     , row.LIST)
 ))
 
 // Final screen: explanation of the goal

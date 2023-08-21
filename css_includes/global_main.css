@@ -73,5 +73,6 @@ span.retry:visited {
 
 
 .PennController-Scale .option {
+    max-width: unset !important;
     margin: 0em 0.5em;
 }
